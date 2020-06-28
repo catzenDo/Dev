@@ -1,0 +1,128 @@
+/* 清除浮动 */
+
+.clearfix:after {
+        content: '.';
+        height: 0;
+        display: block;
+        clear: both;
+}
+
+.clearfix {
+        *zoom: 1;
+        /*zoom:1；就是ie6清除浮动的方式（其他浏览器不能识别 ）*是指ie7以下版本识别（其他正常浏览器看到*就不往下读了，不解析这句） */
+}
+
+
+
+/* 头部样式 */
+html,
+body {
+        width: 100%;
+        height: 100%;
+}
+
+.header {
+        width: 100%;
+        /* height: 80px; */
+        background-color: #07cbc9;
+        /* position: fixed; */
+        /* 此处会脱离文档流 */
+}
+
+.header .header-content {
+        width: 1200px;
+        margin: 0 auto;
+}
+
+.header-content .logo {
+        float: left;
+        padding-top: 16px;
+}
+
+.header-content img {
+        width: 260px;
+        height: 48px;
+}
+
+/* 头部导航 */
+.header-content .nav {
+        float: right;
+}
+
+.header-content .nav ul {
+        list-style: none;
+}
+
+.header-content .nav ul li {
+        float: left;
+
+}
+
+.header-content .nav ul li a {
+        display: inline-block;
+        width: 100px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        color: aliceblue;
+        font-size: 15px;
+        font-weight: 600;
+        font-family: "Miscrosoft YaHei UI";
+}
+
+.header-content .nav ul li a:hover {
+        color: darkorange;
+}
+
+/* 主体部分 */
+
+/* 主体轮播图 */
+.content {
+        /* position: relative; */
+
+}
+
+.content .banner {}
+
+.content .banner img {
+        width: 100%;
+        height: 550px;
+}
+
+.content .mask {
+        width: 100%;
+        height: 550px;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        background-color: #000000;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.content .mask .mask-inp {
+        width: 500px;
+        height: 300px;
+
+        /* position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto; */
+}
+
+.content .mask .mask-inp {}
+
+/* 底部样式 */
+.footer {
+        width: 100%;
+        height: 100px;
+        background-color: saddlebrown;
+        /* position: absolute;
+        left: 0;
+        bottom: 0; */
+}

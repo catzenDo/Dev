@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table的使用</title>
+    <style>
+      table {
+        border: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <table
+      border="1px"
+      width="500px"
+      align="center"
+      bgcolor="#ccc"
+      cellpadding="10px"
+      cellspacing="20px"
+    >
+      <caption>
+        Table的使用
+      </caption>
+      <thead>
+        <tr>
+          <th>Header2</th>
+          <th>Header1</th>
+          <th>Header3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">tbody1</td>
+          <td>tbody2</td>
+          <td>tbody3</td>
+        </tr>
+        <tr>
+          <!-- <td>tbody1</td> -->
+          <td>tbody2</td>
+          <td>tbody3</td>
+        </tr>
+        <tr>
+          <td>tbody1</td>
+          <td>tbody2</td>
+          <td>tbody3</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>tfoot</td>
+          <td>tfoot</td>
+          <td>tfoot</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

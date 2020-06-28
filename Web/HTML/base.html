@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HTML基础知识</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      div {
+        border: 1px solid #ccc;
+        overflow: auto;
+      }
+      table {
+        text-align: center;
+        margin-right: 20px;
+        /* display: inline-block; */
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div>
+      <h3 style="text-align: center;">列表</h3>
+      <table border="1" width="300px">
+        <caption>
+          无序列表
+        </caption>
+        <thead>
+          <tr>
+            <th>type属性</th>
+            <th>值</th>
+            <th>案例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>disc</td>
+            <td>圆点</td>
+            <td>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>cicle</td>
+            <td>空心圆</td>
+            <td>
+              <ul type="circle">
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>square</td>
+            <td>正方形</td>
+            <td>
+              <ul type="square">
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table border="1" width="300px">
+        <caption>
+          有序列表
+        </caption>
+        <thead>
+          <tr>
+            <th>type属性</th>
+            <th>值</th>
+            <th>案例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>数字1，2，3，4，5......</td>
+            <td>
+              <ol type="1">
+                <li>1</li>
+                <li>2</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>小写字母a,b......</td>
+            <td>
+              <ul type="a">
+                <li>a</li>
+                <li>b</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>大写字母A,B......</td>
+            <td>
+              <ul type="A">
+                <li>A</li>
+                <li>B</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>ⅰ</td>
+            <td>小写罗马数字</td>
+            <td>
+              <ul type="ⅰ">
+                <li>ⅰ</li>
+                <li>ⅱ</li>
+                <li>ⅲ</li>
+                <li>ⅳ</li>
+                <li>ⅴ</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Ⅰ</td>
+            <td>大写罗马数字</td>
+            <td>
+              <ul type="Ⅰ">
+                <li>Ⅰ</li>
+                <li>Ⅱ</li>
+                <li>Ⅲ</li>
+                <li>Ⅳ</li>
+                <li>Ⅴ</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="1px">
+        <caption>
+          定义列表
+        </caption>
+        <tbody>
+          <tr>
+            <td>dl的定义列表</td>
+            <td>
+              <pre>
+                dl
+                  dt ... /dt   --定义项目
+                  dd ... /dd   --项目的描述
+                  dt ... /dt
+                  dd ... /dd
+                  dd ... /dd
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>链接</h3>
+
+    <ol reversed>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+    <ol reversed>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ol>
+    <ol>
+      <li>苹果</li>
+      <li>香蕉</li>
+      <li value="10">菠萝</li>
+      <li>西瓜</li>
+      <li>芒果</li>
+    </ol>
+
+    <script src="" async defer></script>
+  </body>
+</html>
