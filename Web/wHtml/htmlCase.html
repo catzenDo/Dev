@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-09 00:58:02
  * @Author: Catzen
- * @LastEditTime: 2020-07-14 17:49:27
+ * @LastEditTime: 2020-07-17 13:20:37
  * @LastEditors: Catzen
  * @Descripttion:
 -->
@@ -51,6 +51,15 @@
         xmp {
             width: 100%;
             background-color: #cccccc;
+        }
+
+        .tableType>table {
+            /* border: 2px solid #cccccc; */
+            text-align: center;
+            padding: 0;
+            width: 100%;
+            /* background: url(./images/zm.png) no-repeat; */
+            /* border-collapse: collapse; */
         }
     </style>
     <script>
@@ -490,15 +499,171 @@
                                 <li></li>
                             </ul>
                         </li>
-                        <li></li>
+                        <li>锚点
+                            <ul>
+                                <li>本页面跳转：
+                                    <ol>
+                                        <li><a href="#d3">跳转链接</a></li>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>
+                                            <h1 id="d3">当前跳转</h1>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    不同页面跳转：
+                                    <ul>
+                                        <li><a href="./页面跳转.html#d1">另一个页面跳转</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li></li>
-
             </ul>
         </section>
         <section class="tableType">
+            <table border="1px" cellpadding="5px" width="100%" cellspacing="6px" rules="All">
+                <thead>
+                    <tr>
+                        <th>标签</th>
+                        <th>属性</th>
+                        <th>属性值</th>
+                        <th>解释</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="18">table</td>
+                        <td>border</td>
+                        <td>数值number（px）</td>
+                        <td>表格变宽的宽度</td>
+                    </tr>
+                    <tr>
 
+                        <td>cellpadding</td>
+                        <td>单元格内容与其边框的内边距</td>
+                        <td>数值number（px）</td>
+                    </tr>
+                    <tr>
+                        <td>cellspacing</td>
+                        <td>单元格的间距</td>
+                        <td>数值number（px）</td>
+                    </tr>
+                    <tr>
+                        <td>bgcolor</td>
+                        <td>背景颜色</td>
+                        <td>十六进制或者RGBA</td>
+                    </tr>
+                    <tr>
+                        <td>background</td>
+                        <td>背景图片</td>
+                        <td>url（图片位置）</td>
+                    </tr>
+                    <tr>
+                        <td>width/height</td>
+                        <td>表格的宽度和高度</td>
+                        <td>数值number（px）</td>
+                    </tr>
+                    <tr>
+                        <td>border-collaspe</td>
+                        <td>边框合并不叠加，边框合并之后的变宽宽度等于前两个边框宽度之和</td>
+                        <td>值为collaspe，相当于cellspacing为0</td>
+                    </tr>
+                    <!-- <tr style="border-top: 1px solid #ccc;"> -->
+                    <tr>
+                        <td rowspan="6">frame</td>
+                        <td>void</td>
+                        <td>不显示外侧边框</td>
+                    </tr>
+                    <tr>
+
+                        <td>Above/Below</td>
+                        <td>显示上/下部的外侧边框</td>
+                    </tr>
+                    <tr>
+
+                        <td>Hside/Vside</td>
+                        <td>显示上部和下部/左边和右边的外侧边框</td>
+                    </tr>
+                    <tr>
+
+                        <td>LSH/RSH</td>
+                        <td>显示左边/右边的外侧边框</td>
+                    </tr>
+                    <tr>
+
+                        <td>Box</td>
+                        <td>所有四个边上显示外侧边框</td>
+                    </tr>
+                    <tr>
+
+                        <td>Border</td>
+                        <td>在所有的四个边上显示外侧边框</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">rules</td>
+                        <td>none</td>
+                        <td>没有线条</td>
+                    </tr>
+                    <tr>
+                        <td>Groups</td>
+                        <td>位于行组合列组之间的线条</td>
+                    </tr>
+                    <tr>
+                        <td>Rows</td>
+                        <td>位于行之间的线条</td>
+                    </tr>
+                    <tr>
+                        <td>Cols</td>
+                        <td>位于列之间的线条</td>
+                    </tr>
+                    <tr>
+                        <td>All</td>
+                        <td>位于行与列之间的线条</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border="5px" cellpadding="5px" cellspacing="5px" style="margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th>标签</th>
+                        <th>属性</th>
+                        <th>属性值</th>
+                        <th>解释</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="5">td和th</td>
+                        <td>width/height</td>
+                        <td>单元格的宽度/高度</td>
+                        <td>数值number（px）</td>
+                    </tr>
+                    <tr>
+                        <td>nowrap</td>
+                        <td>在设置但云哥宽度时，当文本的长度宽于但云哥宽度，将要换行时，使其不换行</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>align/viddle</td>
+                        <td>水平对齐/垂直对齐</td>
+                        <td>(center，left,right),(bottom,top,middle,baseLine)</td>
+                    </tr>
+                    <tr>
+                        <td>colspan</td>
+                        <td>跨列合并</td>
+                        <td>数字</td>
+                    </tr>
+                    <tr>
+                        <td>rowspan</td>
+                        <td>跨行合并</td>
+                        <td>数值number</td>
+                    </tr>
+            </table>
         </section>
         <section class="formType">
 
