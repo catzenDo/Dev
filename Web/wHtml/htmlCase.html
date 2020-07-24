@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-09 00:58:02
  * @Author: Catzen
- * @LastEditTime: 2020-07-24 11:23:09
+ * @LastEditTime: 2020-07-24 13:25:58
  * @LastEditors: Catzen
  * @Descripttion:
 -->
@@ -62,12 +62,48 @@
             /* border-collapse: collapse; */
         }
 
+        .tableType>table:nth-child(2) {
+            table-layout: fixed;
+        }
+
         .formTsble {
             border: 1px solid #cccccc;
             width: 100%;
+            table-layout: fixed;
+        }
+
+        .tableType>table:nth-child(2) th,
+        .tableType>table:nth-child(2) td {
             word-wrap: bread-word;
             word-break: break-all;
+        }
+
+        .formTsble th,
+        .formTsble td {
+            word-wrap: bread-word;
+            word-break: break-all;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .firstLabel,
+        .secondInput {
+            margin-top: 50px;
+            width: 100%;
+            border: 5px solid #cccccc;
+        }
+
+        .secondInput table {
             table-layout: fixed;
+            width: 100%;
+        }
+
+        .secondInput table th,
+        .secondInput table td {
+            word-wrap: bread-word;
+            word-break: break-all;
+            text-align: center;
+            vertical-align: middle;
         }
     </style>
     <script>
@@ -80,7 +116,7 @@
 <body>
     <section class="newLabel">
         <header>HTML标签</header>
-        <section>
+        <section class="firstLabel">
             <ul>
                 <li>header标签
                     <ul>
@@ -468,6 +504,92 @@
             </ul>
 
         </section>
+        <section class="secondInput">
+            <table border="2px">
+                <caption>input表单标签</caption>
+                <thead>
+                    <tr>
+                        <th>标签</th>
+                        <th>属性</th>
+                        <th>解释</th>
+                        <th>案例</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="7">select</td>
+                        <td rowspan="3">select属性</td>
+                        <td>name=""</td>
+                        <td>设置下拉菜单和列表的名称</td>
+                    </tr>
+                    <tr>
+                        <td>multiple="multiple"</td>
+                        <td>设置可以多个选择</td>
+                    </tr>
+                    <tr>
+                        <td>size="可见数目"</td>
+                        <td>设置列表可见选择的数目</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">option属性</td>
+                        <td>selectted=“select”</td>
+                        <td>设置选项初始选中状态</td>
+                    </tr>
+                    <tr>
+                        <td>value="value值"</td>
+                        <td>value值，上传到服务器中的value值</td>
+                    </tr>
+                    <tr>
+                        <td>optgroup</td>
+                        <td>将option进行分组</td>
+                        <td>菜单和列表项目分组标签</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <select style="width: 100%;" size="2" name="sel" id="">
+                                <optgroup label="groupOne">
+                                    <option value="one">one</option>
+                                    <option value="two" selected>Two</option>
+                                    <option value="three">Three</option>
+                                </optgroup>
+                                <optgroup label="groupTwo">
+                                    <option value="first">First</option>
+                                    <option value="Second">Second</option>
+                                    <option value="Third">Third</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">textarea</td>
+                        <td>name</td>
+                        <td>name="name值"</td>
+                        <td>设置文本区的名称</td>
+                    </tr>
+                    <tr>
+                        <td>placeholder</td>
+                        <td>placeholder="解释值"</td>
+                        <td>解释textarea区域内容</td>
+                    </tr>
+                    <tr>
+                        <td>rows</td>
+                        <td>rows="数值"</td>
+                        <td>文本区内的可见行数</td>
+                    </tr>
+                    <tr>
+                        <td>cols</td>
+                        <td>cols="数值"</td>
+                        <td>文本区内的可见列数</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <textarea style="width: 100%;" name="textareaName" id="" cols="30" rows="10"
+                                placeholder="textarea的内容"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
 
     <!-- 各类型 -->
@@ -654,7 +776,7 @@
                     <tr>
                         <td>nowrap</td>
                         <td>在设置但文本宽度时，当文本的长度宽于但云哥宽度，将要换行时，使其不换行</td>
-                        <td></td>
+                        <td>nowrap="nowrap"</td>
                     </tr>
                     <tr>
                         <td>align/viddle</td>
@@ -681,7 +803,7 @@
                         <th>标签</th>
                         <th>属性</th>
                         <th>属性值</th>
-                        <th width=“5%”>解释</th>
+                        <th>解释</th>
                         <th>例子</th>
                     </tr>
                 <tbody>
@@ -698,7 +820,7 @@
                     </tr>
                     <tr>
                         <td rowspan="2">method</td>
-                        <td width=“50px”>get</td>
+                        <td>get</td>
                         <td>method="GET"</td>
                         <td>保密性差，信息会暴露，数量有限，一般用于信息的查询或者获取</td>
                     </tr>
@@ -708,79 +830,177 @@
                         <td>作为HTTP请求体的一部分，数量无线，一般用于修改服务器的资源</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>name</td>
+                        <td>name="表单名字"</td>
+                        <td>表单的名字</td>
+                        <td>表单名称</td>
+                    </tr>
+                    <tr>
+                        <td>autoplay</td>
+                        <td>autoplay="on"</td>
+                        <td>form或input域应该自动完成填充功能</td>
+                        <td>一个属性</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="31">input</td>
+                        <td rowspan="22">type</td>
+                        <td>text</td>
+                        <td>type="text"</td>
+                        <td>文本域</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>type="password"</td>
+                        <td>密码域</td>
+
+                    </tr>
+                    <tr>
+                        <td>file</td>
+                        <td>type="file"</td>
+                        <td>文件域</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">type="checkbox"</td>
+                        <td>name=“共同名字”</td>
+                        <td>name值最好相同，因为这样服务器会知道哪些是一组的</td>
+                    </tr>
+                    <tr>
+                        <td>checkbox="checkbox"</td>
+                        <td>选中</td>
+                    </tr>
+                    <tr>
+                        <td>value=“value值”</td>
+                        <td>都有value值，上传到服务器中的value值</td>
+
+                    </tr>
+                    <tr>
+                        <td rowspan="2">type="vadio"</td>
+                        <td>checkbox="checkbox"</td>
+                        <td>选中</td>
+                    </tr>
+                    <tr>
+                        <td>value=“value”</td>
+                        <td>value值，上传到服务器中的value值</td>
+
+                    </tr>
+                    <tr>
+                        <td>type="button"按钮</td>
+                        <td>type="submit"提交</td>
+                        <td>type="reset"重置</td>
+                    </tr>
+                    <tr>
+                        <td>type=“hidden”隐藏域</td>
+                        <td>type="image"图像域</td>
+                        <td>type="image" name="image-button" src="图片位置"</td>
+                    </tr>
+                    <tr>
+                        <td>url</td>
+                        <td>type="url（图片位置）"</td>
+                        <td>统一资源定位符</td>
+                    </tr>
+                    <tr>
+                        <td>tel</td>
+                        <td>type="tel"</td>
+                        <td>针对移动端显示数字键盘</td>
+                    </tr>
+                    <tr>
+                        <td>number</td>
+                        <td>type="number"</td>
+                        <td>只显示数字</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">日期选择</td>
+                        <td>type="Date"</td>
+                        <td>选择日，月，年</td>
+                    </tr>
+                    <tr>
+                        <td>type="Month"</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>type="Week"</td>
+                        <td>选取轴和年（iphone不支持）</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>type="Time"</td>
+                        <td>选取时间（小时和分钟）</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>type="Datetime"</td>
+                        <td>选取时间，日，月，年（UTC时间）</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>type="Datetime-local"</td>
+                        <td>选取时间，日，月，年(本地时间)</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>type="range"</td>
+                        <td>把一段分成多少段然后进行选择</td>
+                        <td><input style="width: 100%;" type="range" name="range" min="1" max="10"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>type="search"</td>
+                        <td>自动识别内容而且删除记录anniu </td>
+                        <td><input style="width: 100%;" type="search" name="search"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>type="color"</td>
+                        <td>颜色选择按钮</td>
+                        <td><input type="color" name="color" id=""></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>name</td>
+                        <td>name="input域的名字"</td>
+                        <td>文本域的名称</td>
+                        <td>任何input都可以设置name属性</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>maxlength</td>
+                        <td>maxlength="number数值"</td>
+                        <td>指用户输入最大的字符长度</td>
+                        <td>限制文本长度</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>size</td>
+                        <td>size="文本框的宽度"</td>
+                        <td>指定文本框的宽度</td>
+                        <td>限制文本宽的宽度</td>
+                    </tr>
+                    <tr>
+                        <td>value</td>
+                        <td>value="vaalue值"</td>
+                        <td>文本框的默认值</td>
+                        <td>可以限制空也可以默认值</td>
+                    </tr>
+                    <tr>
+                        <td>placeholder</td>
+                        <td>placeholder="文本提示"</td>
+                        <td>描述输入域所期待的值</td>
+                        <td>可以设置样式也可以设置</td>
+                    </tr>
+                    <tr>
+                        <td>autofocus</td>
+                        <td>autofocus="autofocus"</td>
+                        <td>规定在页面加载时，域自动的获得焦点</td>
+                        <td><input style="width: 100%;" type="text" autofocus=“autofocus”></td>
+                    </tr>
+                    <tr>
+                        <td>multiple</td>
+                        <td>multiple="multiple"</td>
+                        <td>规定选择多个值</td>
+                        <td><input style="width: 100%;" type="file" name="file" multiple id=""></td>
+                    </tr>
+                    <tr>
+                        <td>require</td>
+                        <td>require="require"</td>
+                        <td>规定提交之前必须填写输入域（不能为空）</td>
+                        <td>简单的输入域检测</td>
+                    </tr>
+                    <tr>
+                        <td>hidden</td>
+                        <td>hidden="hidden"</td>
+                        <td>是否隐藏input域</td>
+                        <td>隐藏使用的</td>
                     </tr>
                 </tbody>
                 </thead>

@@ -1,0 +1,155 @@
+<!--
+ * @Date: 2020-07-24 13:53:54
+ * @Author: Catzen
+ * @LastEditTime: 2020-07-24 16:07:47
+ * @LastEditors: Catzen
+ * @Descripttion: 
+-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form表单</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <section>
+        <header>Form表单</header>
+        <table>
+            <tr>
+                <td>
+                    <form action="" autocomplete="on" method="GET">
+                        <fieldset>
+                            <legend>Form表单</legend>
+                            <div>
+                                <label for="text">文本域:</label>
+                                <input type="text" id="text">
+                            </div>
+                            <div>
+                                <label for="password">密码域:</label>
+                                <input type="password" id="password">
+                            </div>
+                            <div>
+                                <label for="file">文件域:</label>
+                                <input type="file" id="file">
+                            </div>
+                            <div>
+                                <label for="email">邮箱:</label>
+                                <input type="text" id="email">
+                            </div>
+                            <div>
+                                <label for="url">统一资源定位符:</label>
+                                <input type="url" id="url">
+                            </div>
+
+                            <div>
+                                <label for="tel">数字键盘:</label>
+                                <input type="tel" id="tel">
+                            </div>
+
+                            <div>
+                                <label for="number">数字:</label>
+                                <input type="number" id="number">
+                            </div>
+
+                            <div>
+                                <label for="Date">日月年:</label>
+                                <input type="date" id="Date">
+                            </div>
+
+                            <div>
+                                <label for="month">月年:</label>
+                                <input type="month" id="month">
+                            </div>
+
+                            <div>
+                                <label for="week">周和年:</label>
+                                <input type="week" id="week">
+                            </div>
+
+                            <div>
+                                <label for="time">时间（小时分钟）:</label>
+                                <input type="time" id="time">
+                            </div>
+                            <div>
+                                <label for="datetime">UTC时间:</label>
+                                <input type="datetime" id="datetime">
+                            </div>
+                            <div>
+                                <label for="datetimeLocal">本地时间:</label>
+                                <input type="datetime-local" id="datetimeLocal">
+                            </div>
+                            <div>
+                                <label for="range">分段:</label>
+                                <input type="range" id="range">
+                            </div>
+                            <div>
+                                <label for="search">搜索:</label>
+                                <input type="search" id="search">
+                            </div>
+                            <div>
+                                <label for="color">颜色:</label>
+                                <input type="color" id="color">
+                            </div>
+                            <div class="radio">
+                                <label for="email">性别:</label>
+                                <input type="radio" name="sex" value="男" id="">男
+                                <input type="radio" name="sex" value="女" id="">女
+                                <input type="radio" checked name="sex" value="保密" id="">保密
+                            </div>
+                            <div class="checkbox">
+                                <label for="checkbox">多选框</label>
+                                <input type="checkbox" name="choose" value="篮球">篮球
+                                <input type="checkbox" name="choose" value="足球">足球
+                                <input type="checkbox" name="choose" value="排球">排球
+                                <input type="checkbox" name="choose" value="乒乓球">乒乓球
+                            </div>
+                            <div>
+                                <label for="select">选择组:</label>
+                                <select name="sel" id="select">
+                                    <optgroup label="性别">
+                                        <option value="男">男</option>
+                                        <option value="女">女</option>
+                                        <option value="保密">保密</option>
+                                    </optgroup>
+                                    <optgroup label="电视剧">
+                                        <option value="智者无敌">智者无敌</option>
+                                        <option value="勇者无敌">勇者无敌</option>
+                                        <option value="信者无敌">信者无敌</option>
+                                        <option value="仁者无敌">仁者无敌</option>
+                                        <option disabled value="正者无敌">正者无敌</option>
+                                        <option disabled value="忠者无敌">忠者无敌</option>
+                                    </optgroup>
+                                </select>
+                                <label for="oneLabel">简单Select</label>
+                                <select name="simple" id="oneLabel">
+                                    <option value="优酷">优酷</option>
+                                    <option value="爱奇艺">爱奇艺</option>
+                                    <option value="搜狐视频">搜狐视频</option>
+                                    <option value="乐视视频">乐视视频</option>
+                                </select>
+                            </div>
+
+                        </fieldset>
+
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <script src="" async defer></script>
+</body>
+</html>
