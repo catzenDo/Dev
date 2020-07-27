@@ -1,0 +1,444 @@
+<!--
+ * @Date: 2020-07-24 16:51:40
+ * @Author: Catzen
+ * @LastEditTime: 2020-07-27 10:38:17
+ * @LastEditors: Catzen
+ * @Descripttion: 
+-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS属性大比拼</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <section class="main">
+        <header>CSS大比拼</header>
+        <hr>
+        <section class="main-table">
+            <caption>CSS属性大比拼</caption>
+            <table border="5px" cellspacing="5px" cellpadding="5px">
+                <theader>
+                    <tr>
+                        <th>属性</th>
+                        <th>分类</th>
+                        <th>解释</th>
+                        <th>例子</th>
+                        <th></th>
+                    </tr>
+                </theader>
+                <tbody>
+                    <tr>
+                        <td rowspan="5">引用方式</td>
+                        <td>行内样式</td>
+                        <td>在元素标签添加,权重最高</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>嵌入式样式</td>
+                        <td>在head内添加style标签</td>
+                        <td>style>样式设置style></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>外部链接</td>
+                        <td>在head添加link标签,并引入外部文件</td>
+                        <td>link rel="stylesheet" href="style.css"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>导入式</td>
+                        <td>在head添加style的@import导入css文件</td>
+                        <td>style type="text/css" > @import"css文件的地址" /style></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>link和import的区别</td>
+                        <td>link是html加载前就引用,import是html加载后才引用</td>
+                        <td>
+                            <ul>
+                                <li>若使用Javascript动态添加引用CSS,需要使用link引用方式才可以实现</li>
+                                <li>link最常用且<span class="importantNews">多文件引动同一个CSS文件,css只需要下载一次</span></li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="41">选择器</td>
+                        <td>通配符选择器</td>
+                        <td>*</td>
+                        <td>*{}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>标签选择器</td>
+                        <td>元素{}</td>
+                        <td>p{}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>类选择器</td>
+                        <td>.类名</td>
+                        <td>.one{}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>ID选择器</td>
+                        <td>#id名{}</td>
+                        <td>#one{}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>紧跟相邻兄弟选择器</td>
+                        <td>element+element {
+                            用于选取第一个指定的元素之后（不是内部）紧跟的元素。}</td>
+                        <td>div+p{
+                            选择 div 元素之后紧跟的每个p 元素，并设置其背景色：}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>非紧跟兄弟元素</td>
+                        <td>element1~element2 选择器 element1 之后出现的所有 element2。
+                            两种元素必须拥有相同的父元素，<span class="importantNews"> 但是 element2 不必直接紧随 element1。</span></td>
+                        <td>所有相同的父元素中位于 p 元素之后的所有 ul 元素设置背景：p~ul</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>多元素选择器</td>
+                        <td>选择多个元素{}</td>
+                        <td>p,div,ul{设置样式}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="7">属性选择器(对带有指定属性的HTML元素设置样式)</td>
+                        <td>元素[属性]</td>
+                        <td>选择带有指定属性的元素</td>
+                        <td>a[targe]{}</td>
+                    </tr>
+                    <tr>
+                        <td>元素[属性="属性值"]</td>
+                        <td>某个元素的属性是某个值的</td>
+                        <td>[target="_blank"]{选择target="_blank"}的所有元素</td>
+                    </tr>
+                    <tr>
+                        <td>元素[属性~="value值"]</td>
+                        <td>选择属性包含单词"value"的元素</td>
+                        <td>[title~="flower"]{选择title属性包含单词"flower"的所有元素}</td>
+                    </tr>
+                    <tr>
+                        <td>元素[属性^="value值"]</td>
+                        <td>选择属性值以"value"开头的所有元素</td>
+                        <td>a[src="^https"]{选择其src属性值以https开头的每个a元素}</td>
+                    </tr>
+                    <tr>
+                        <td>元素[属性$="value值"]</td>
+                        <td>选择属性值以value结尾的所有元素</td>
+                        <td>a[src$=".pdf"]{选择其src属性以.pdf结尾的所有a元素}</td>
+                    </tr>
+                    <tr>
+                        <td>元素[属性*="value"]</td>
+                        <td>选择属性值包含"value"的所有元素</td>
+                        <td>a[src*="abc"]{选择其src属性中包含sbc子串的每个a元素}</td>
+                    </tr>
+                    <tr>
+                        <td>元素[属性|="value"]</td>
+                        <td>选择属性值为"value"或以"value"开头的所有元素</td>
+                        <td>[lang|=en]{选择lang属性值以""en"开头的所有元素}</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="10">伪类选择器</td>
+                        <td colspan="3" style="text-align: center;">
+                            动态伪类:这些伪类并不存在HTML中,只有当用户和网站交互的时候才能体现出来
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">锚点伪类</td>
+                        <td>:link</td>
+                        <td>a:link选择所有未被访问的链接</td>
+                    </tr>
+                    <tr>
+                        <td>:visited</td>
+                        <td>a:visited选择所有已被访问的链接</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">用户行为伪类</td>
+                        <td>:hover</td>
+                        <td>a:hover选择鼠标指针位于其上的链接</td>
+                    </tr>
+                    <tr>
+                        <td>:active</td>
+                        <td>:active选择活动链接</td>
+                    </tr>
+                    <tr>
+                        <td>:focus</td>
+                        <td>input:focus选择获得焦点的input元素</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">UI元素状态伪类</td>
+                    </tr>
+                    <tr>
+                        <td>:enabled</td>
+                        <td colspan="2">input:enabled选择每个启用的input元素</td>
+                    </tr>
+                    <tr>
+                        <td>:disabled</td>
+                        <td colspan="2">input:disabled选择每个禁用的input元素</td>
+                    </tr>
+                    <tr>
+                        <td>:checked</td>
+                        <td colspan="2">选择每个被选中的input元素</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="12">CSS3结构类</td>
+                        <td colspan="3">元素:nth选择器:选择父元素底下的第N个元素选择的元素
+                            <p>:first-child,:last-child,:nth-child(),:nth-last-child(),:nth-of-type(),:nth-last-of-type(),:first-of-type(),:last-of-type(),:only-child(),:only-of-type(),:empty
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>元素:first-child{}</td>
+                        <td>选择属于其父元素的首个子元素的每个Element元素</td>
+                        <td>p:first-child{span class="importantNews">父元素地下的第一个必须是P元素,否则不能成功</span> }</td>
+                    </tr>
+                    <tr>
+                        <td>元素:last-child{}</td>
+                        <td>选择属于其父元素的最后一个子元素的每个Element元素</td>
+                        <td>p:first-child{ <span class="importantNews">父元素地下的最后一个必须是P元素,否则不能成功</span> }</td>
+                    </tr>
+                    <tr>
+                        <td>元素:nth-child(N)</td>
+                        <td>选择属于其元素的第N个子元素,不论元素的类型</td>
+                        <td>
+                            <p>N代表数字:选择某元素下的第number个元素[1开始]</p>
+                            <p>简单的表达式:取值从0开始,比如:2n</p>
+                            <p>元素:nth-child(odd){匹配奇数的元素}</p>
+                            <p>元素:nth-child(even){匹配偶数的元素}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>元素:nth-last-child(n)</td>
+                        <td>倒着数进行从最后一个元素算起</td>
+                        <td>方法同上</td>
+                    </tr>
+                    <tr>
+                        <td>元素:nth-of-type(n)</td>
+                        <td>选择属于其父元素的第N个元素,必须和元素相同</td>
+                        <td>p:nth-of-type(n){p元素的父元素下的第n个p元素}</td>
+                    </tr>
+                    <tr>
+                        <td>元素:first-of-type/元素:last-of-type</td>
+                        <td>选择匹配属于其元素的特定类型的首个子元素</td>
+                        <td>p:first-of-type{}/p:last-of-type{}</td>
+                    </tr>
+                    <tr>
+                        <td>元素:nth-last-of-type{}</td>
+                        <td>选择属于父元素的特定类型的第N个子元素的每个元素,从最后一个元素开始计数</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>元素:only-child</td>
+                        <td>匹配属于其元素的唯一子元素的每一格元素</td>
+                        <td>p:only-child{选择属于其元素唯一的子元素的每个p元素}</td>
+                    </tr>
+                    <tr>
+                        <td>元素:only-of-type</td>
+                        <td>匹配属于其元素的特定类型的唯一子元素的每个元素</td>
+                        <td>p:only-of-type{选择属于其父元素唯一的p元素}</td>
+                    </tr>
+                    <tr>
+                        <td>元素:empty</td>
+                        <td>匹配没有子元素(包括文本节点)的每个元素</td>
+                        <td>p:empty{选择没有子元素的每个P元素(包括文本节点)}</td>
+                    </tr>
+                    <tr>
+                        <td>否定选择器:not</td>
+                        <td>元素:not(子元素/子选择器),匹配非指定元素/选择器的每个元素</td>
+                        <td>:not(p)选择非p元素的每个子元素</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">伪元素</td>
+                        <td>元素:first-line</td>
+                        <td>对元素的第一行文本进行格式化,只能用于块级元素</td>
+                        <td>p:first-line{}</td>
+                    </tr>
+                    <tr>
+                        <td>元素:first-letter</td>
+                        <td>用于向文本的首字母设置特殊的样式</td>
+                        <td>p:first-letter{}</td>
+                    </tr>
+                    <tr>
+                        <td>元素:before</td>
+                        <td>在元素的内容前面插入新的内容,常用"content"配合使用</td>
+                        <td>p:before{content:"内容"}</td>
+                    </tr>
+                    <tr>
+                        <td>元素:after</td>
+                        <td>在元素的内容后面插入新内容</td>
+                        <td>p:after{content:""}</td>
+                    </tr>
+                    <tr>
+                        <td>元素::selection</td>
+                        <td>用于设置在浏览器中选中的文本后的背景色与前景色</td>
+                        <td>input::selection选择被用户选取的元素部分</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">字体属性</td>
+                        <td>font属性简写</td>
+                        <td colspan="3">font:font-style font-variant font-weight font-size/line-height font-family</td>
+                    </tr>
+                    <tr>
+                        <td>字体样式</td>
+                        <td>font-style:normal/italic/oblique</td>
+                        <td>字体变形:设置元素中文本大小写字母</td>
+                        <td>font-variant:normal/small-cap</td>
+                    </tr>
+                    <tr>
+                        <td>字体粗细</td>
+                        <td>font-weight:normal/bold/bolder/lighter/100-900</td>
+                        <td>字体大小</td>
+                        <td>font-size:相对单位/绝对单位</td>
+                    </tr>
+                    <tr>
+                        <td>字体类型</td>
+                        <td>font-family:字体名/字体集</td>
+                        <td>字体的颜色</td>
+                        <td>color:颜色名/十六进制/RGBA</td>
+                    </tr>
+                    <tr>
+                        <td>对齐样式</td>
+                        <td>text-align:center/left/right</td>
+                        <td>垂直对齐</td>
+                        <td>vertical-align:baseline/super/top/text-top/middle/bottom/text-bottom/长度值/百分比</td>
+                    </tr>
+                    <tr>
+                        <td>行高</td>
+                        <td>line-height:长度值/百度值</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">文本属性</td>
+                        <td>设置元素单词之间间距</td>
+                        <td>word-spacing:数值</td>
+                        <td>设置字母之间的间距</td>
+                        <td>letter-spacing</td>
+                    </tr>
+                    <tr>
+                        <td>设置元素内文本的大小写</td>
+                        <td>text-transform:capitalize/uppercase/lowercase/none</td>
+                        <td>设置元素内文本的装饰</td>
+                        <td>text-decoration:underline/overline/line-through/blink/none</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">盒模型</td>
+                        <td>概念</td>
+                        <td>1.盒模型是存放网页中的各种元素</td>
+                        <td colspan="2">2.网页设计中内容,如文字,图片等元素,都是盒子(DIV嵌套)</td>
+                    </tr>
+                    <tr>
+                        <td>盒模型的宽和高</td>
+                        <td>width/height:长度值/百分比/auto</td>
+                        <td>max-width/max-height:长度值/百分比/auto</td>
+                        <td>min-width/min-height:长度值/百分比/auto</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="10">边框</td>
+                        <td>边框属性简写/td>
+                        <td colspan="3">border:border-width border-style border-color:宽度 样式 颜色</td>
+                    </tr>
+                    <tr>
+                        <td>边框的宽度</td>
+                        <td>border-width:thin/medium/thick/number值;
+                            不支持百分比
+                        </td>
+                        <td>边框样式</td>
+                        <td>border-style:solid/dotted/double</td>
+                    </tr>
+                    <tr>
+                        <td>边框颜色</td>
+                        <td>border-color:颜色名/十六进制/RGBA</td>
+                        <td>圆角:
+                            <div class="box">
+                                <div class="dotted"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="doubleLine"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>三角形</td>
+                        <td>
+                            <div class="triangle">
+
+                            </div>
+                        </td>
+                        <td>梯形</td>
+                        <td>
+                            <div class="tixing">
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>复选框</td>
+                        <td>
+
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="checkbox">
+
+        </div>
+    </section>
+
+    <script src="./js/index.js" async defer></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div+ul {
+            color: red;
+        }
+
+        div~p {
+            color: olivedrab;
+        }
+
+        /* nth结构元素 */
+        div:first-child {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>我是第一个P</p>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <p>测试信息</p>
+    <ul>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <div>
+        <h1>测试信息1</h1>
+        <p>asas</p>
+        <h1>测试信息2</h1>
+        <h1>测试信息3</h1>
+        <h1>测试信息4</h1>
+        <h1>测试信息5</h1>
+        <p>信息第一步</p>
+        <p>信息第一步</p>
+        <p>信息第一步</p>
+        <p>信息第一步</p>
+    </div>
+</body>
+</html>
