@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-24 16:51:40
  * @Author: Catzen
- * @LastEditTime: 2020-07-28 16:56:37
+ * @LastEditTime: 2020-07-29 13:41:15
  * @LastEditors: Catzen
  * @Descripttion: 
 -->
@@ -530,8 +530,8 @@
                     <tr>
                         <td rowspan="5">margin的重叠</td>
                         <td>margin重叠通常特性</td>
-                        <td>block水平元素(不包括float和absolute元素)</td>
-                        <td>不考虑writing-mode,只发生在垂直方向</td>
+                        <td>1、只发生在block元素上(不包括float、absolute、inline-block元素)</td>
+                        <td>2、只发生在垂直方向上(不考虑writing-mode)</td>
                     </tr>
                     <tr>
                         <td rowspan="4">margin重叠的三种情形</td>
@@ -545,58 +545,76 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>父级和第一个或者最后一个子元素</td>
+                        <td>1、相邻的兄弟元素</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>2、父级元素和第一个或最后一个子元素，父子级的margin重叠又叫margin传递</td>
+                        <td>父子级margin重叠需要满足以下几个条件(以margin-top重叠为例)：
+                            <ol>
+                                <li>a、父元素不是BFC元素</li>
+                                <li>b、父元素没有padding-top值</li>
+                                <li>c、父元素没有border-top值</li>
+                                <li>d、父元素和第一个子元素之间没有inline元素分隔</li>
+                                <li>如果是父子级的margin-bottom重叠，第d条改为父元素和最后一个子元素之间没有inline元素分隔，以及还需要满足父元素没有height、min-height、max-height限制
+                                </li>
+                            </ol>
+                        </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>3、空的block元素</td>
+                        <td>空block元素发生margin重叠也需要满足一些条件:
+                            <ol> 
+                                <li>a、元素没有border值</li>
+                                <li>b、元素没有padding值</li>
+                                <li>c、里面没有inline元素</li>
+                                <li>d、没有height或min-height</li>
+                            </ol>
+                        </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td rowspan="2">理解CSS中的margin:auto</td>
+                        <td>图片为什么不居中</td>
+                        <td>图片无法水平居中，类似于块级元素无法垂直居中。因为图片的宽度width默认是自身宽度，与父元素的宽度没有直接关系。左右margin设置为auto，会被重置为0图片要水平居中，</td>
+                        <td>需要设置为display:block元素</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>margin:auto无法实现垂直居中;
+                            (如果使用的margin:auto的垂直居中,则在父级使用writing-mode:vertical-lr;)
+                        </td>
+                        <td>水平方向可以居中是因为块级元素的宽度默认是撑满父级元素的，如果给宽度设置一个固定值，而左右margin设置为auto，则可以平分剩余空间. 
+                        </td>
+                        <td>垂直方向不可以居中是因为块级元素的高度默认是内容高度，与父级元素的高度并没有直接的关系，而上下margin设置为auto，则被重置为0</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td rowspan="5">margin无效情形</td>
+                        <td>1.行内元素垂直margin无效</td>
+                        <td>因为行内元素垂直布局主要是通过行高line-height和垂直对齐vertical-align来影响的，垂直margin并不会影响它们，所以不会影响垂直布局。而在显示方式，margin区域不会显示元素背景，所以也不会影响自身元素的显示，所以行内元素垂直margin无效
+                        </td>
+                        <td>[注意]不包括inline-block或设置writing-mode为vertical-lr的情况</td>
                     </tr>
                     <tr>
+                        <td>2.某些表格类元素margin无效</td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>不可设置margin。对于display属性来说，display为table相关类型(不包括table-caption、table、inline-table)，margin声明无效
+                        </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>3、绝对定位元素非定位方向的margin值看似无效</td>
+                        <td colspan="2">绝对定位的margin值是一直有效的，只是因为绝对定位元素是脱离文档流的，与其他元素节点没有什么关系，所以看不出效果</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>4、BFC造成的margin看似无效</td>
+                        <td colspan="2">
+                             左侧元素使用浮动，右侧元素使用overflow-hidden实现两栏自适应的布局时，右侧元素的margin-left值只有足够大，才能看到效果。这是因为margin-left是相对于父元素左侧，而不是图片右侧style="width:
+                            100%; height: 170px" src="https://demo.xiaohuochai.site/css/margin/m7.html"allowfullscreen
+                            frameborder="0"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td> 5、内联特性导致的margin无效</td>
+                        <td colspan="2">
+                            一个div里面包着一张图片，当图片的margin-top小到一定值时，图片就不再接着向上移动了。这是因为图片是内联元素，它受制于内联元素vertical-align对齐特性的影响。默认基线对齐。以页面假想的大写X字符为例，X是不会因为图片margin-top足够小而跑到父元素外面的，所以图片移动到一定位置就不再接着向上移动了
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
