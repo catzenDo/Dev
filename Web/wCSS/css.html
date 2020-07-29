@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-24 16:51:40
  * @Author: Catzen
- * @LastEditTime: 2020-07-29 14:35:00
+ * @LastEditTime: 2020-07-29 17:04:22
  * @LastEditors: Catzen
  * @Descripttion: 
 -->
@@ -689,8 +689,63 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>z-index</td>
+                        <td rowspan="11">z-index</td>
+                        <td colspan="4">z-index属性制定了元素极易子元素的[z顺序],而[z顺序]可以决定当元素发生覆盖的时候,哪个元素在上面.通常一个较大z-index值会覆盖较低的一个
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="10">特性</td>
+                        <td>1.如果定位元素z-index没有发生嵌套</td>
+                        <td>后来居上原则</td>
+                        <td>哪个大哪个上</td>
+                    </tr>
+                    <tr>
+                        <td>2.如果定位元素z-index发生嵌套</td>
+                        <td>祖先优先原则</td>
+                        <td>
+                            <ol>
+                                <li>前提:z-index值是数值,非auto</li>
+                                <li>z-index:auto当前层叠上下文的生成盒子层叠水平是0,盒子(除非是根元素)不会创建一个新的层叠上下文</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CSS中层叠上下文和层叠水平</td>
+                        <td>层叠上下文时HTML元素中的一个三维概念,标识元素在Z轴上有了"可以高人一等"</td>
+                        <td>层叠水平:层叠上下文中的每个元素都有一个层叠水平,决定了同一个层叠上下文中元素在Z轴上的显示顺序.</td>
+                    </tr>
+                    <tr>
+                        <td>元素的层叠顺序</td>
+                        <td>层叠上下文---->>负z-index---->block块状水平元素---->float浮动盒子---->inline/inlien-block---->z-index:auto或看成z-index:0---->正z-index
+                        </td>
+                        <td>内容是页面最重要的尸体,因此层叠水平要高</td>
+                    </tr>
+                    <tr>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <td></td>
                         <td></td>
                         <td></td>
