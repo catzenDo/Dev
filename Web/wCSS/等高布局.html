@@ -1,0 +1,78 @@
+<!--
+ * @Date: 2020-07-28 11:01:57
+ * @Author: Catzen
+ * @LastEditTime: 2020-07-28 12:21:07
+ * @LastEditors: Catzen
+ * @Descripttion: 
+-->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        /* 伪等高------边框模拟 */
+        body,
+        p {
+            margin: 0;
+        }
+
+        .parent {
+            position: relative;
+        }
+
+        .center {
+            box-sizing: border-box;
+            padding: 0 20px;
+            background-clip: content-box;
+            border-left: 210px solid lightblue;
+            border-right: 310px solid lightgreen;
+        }
+
+        .left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+        }
+
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="parent" style="background-color: lightgrey;">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="center" style="background-color: pink;">
+            <p>center</p>
+            <p>center</p>
+            <p>center</p>
+            <p>center</p>
+            <p>center</p>
+            <p>center</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+        </div>
+    </div>
+    <script src="" async defer></script>
+</body>
+</html>

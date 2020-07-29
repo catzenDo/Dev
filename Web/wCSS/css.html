@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-24 16:51:40
  * @Author: Catzen
- * @LastEditTime: 2020-07-27 10:38:17
+ * @LastEditTime: 2020-07-28 16:56:37
  * @LastEditors: Catzen
  * @Descripttion: 
 -->
@@ -355,7 +355,7 @@
                         <td>min-width/min-height:长度值/百分比/auto</td>
                     </tr>
                     <tr>
-                        <td rowspan="10">边框</td>
+                        <td rowspan="16">边框</td>
                         <td>边框属性简写/td>
                         <td colspan="3">border:border-width border-style border-color:宽度 样式 颜色</td>
                     </tr>
@@ -396,8 +396,187 @@
                     <tr>
                         <td>复选框</td>
                         <td>
-
+                            <input type="checkbox" class="checkbox">
                         </td>
+                        <td>渲染图片</td>
+                        <td> <img src="./images/tel.png" class="icon" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>增加可视渲染区域</td>
+                        <td> <img src="./images/tel.png" class="icons" alt=""></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">圆角</td>
+                        <td>border-radius</td>
+                        <td>为元素添加圆角边框</td>
+                        <td>border-radius:数值/百分比</td>
+                    </tr>
+                    <tr>
+                        <td>左上角/右上角border-top-left/right-radius</td>
+                        <td colspan="2">左下角/右下角border-bottom-left/right-radius</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">CSS3盒阴影</td>
+                        <td>设置一个或多个下拉阴影的框</td>
+                        <td colspan="4">box-shadow:h-shadow v-shadow blur spread color inset</td>
+                    </tr>
+                    <tr>
+                        <td>h-shadow:阴影在x轴上的阴影位置。可以是负值。</td>
+                        <td colspan="2">v-shadow:表示阴影在y轴上的位置。也可以是负值。</td>
+                    </tr>
+                    <tr>
+                        <td> blurblur指的是阴影的模糊半径。</td>
+                        <td colspan="2">spread:spread表示的是阴影的半径。</td>
+                    </tr>
+                    <tr>
+                        <td>color【可选】:阴影的颜色可以用任何颜色单位来表示。</td>
+                        <td colspan="2"> inset 【可选】:我们设置的阴影都是外部阴影，而这个属性值的作用是将外部阴影转换成内部阴影。</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">CSS边界图片</td>
+                        <td colspan="3">指定边框图片的设置:border:source slice width outset repeat</td>
+                    </tr>
+                    <tr>
+                        <td>border-image-source:none|image指定图片的位置(source:所用图像的url地址；)</td>
+                        <td colspan="2">border-image-width:number|%|auto;指定图像边界的宽度</td>
+                    </tr>
+                    <td>border-image-slice:none|%|fill指定图像的边界向内偏移(slice:1~4个长度值（或者百分比），用于设置图片在每一条边上的距离（区域）；)</td>
+                    <td colspan="2">border-image-outset:length|number;指定在边框外部绘制border-image-area的量</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            border-image-repeat:stretch|repeat|round|initial|inherit;该属性用于图像边界是否应该重复(repeat),拉伸(stretch)或铺满(round)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">填充(padding)</td>
+                        <td>设置元素内容与边框之间的距离(填充)</td>
+                        <td>1.值不能为负值;padding的百分比时相对宽度计算的</td>
+                        <td style="text-align: left;">2.width的值为auto/box-sizing为border-box,padding的值没有暴走,不影响尺寸</td>
+                        <td>3.对于inline水平元素,水平影响,但是垂直不影响尺寸,但是会影响背景颜色(占据空间)</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">padding实战</td>
+                        <td>注册 <span class="line"></span> 退出登录 </td>
+                        <td><span class="rows">有文字断行</span></td>
+                        <td>空inline元素+padding高宽也不等<span class="emptys"></span></td>
+                    </tr>
+                    <tr>
+                        <td>CSS标签中的ol/ul的内置padding;
+                            <ol>
+                                <li>ol/li元素内置了padding-left,但是单位是px不是em</li>
+                                <li>padding-left的值22-25之间可以实现序号和下面的内容左对齐</li>
+                                <li>如果字号很小,间距就会很开</li>
+                                <li>如果字号很大,序号会爬到容器的外面</li>
+                            </ol>
+                        </td>
+                        <td colspan="2" style="text-align: left;">
+                            button按钮: <button id="btn">提交</button>
+                            <label for="btn">按钮</label>
+                        </td>>
+                    </tr>
+                    <tr>
+                        <td>表单元素
+                            <ol>
+                                <li>火狐中:button:-moz-focus-linner{padding:0}</li>
+                                <li>IE浏览器:IE7文字越多,左右padding越大:button{overflow:hidden}</li>
+                            </ol>
+                        </td>
+                        <td colspan="2">
+                            <ul>
+                                <li>所有浏览器input/textarea输入框内置padding</li>
+                                <li>所有浏览器的button按钮内置padding</li>
+                                <li>部分浏览器select下拉内置padding,如火狐,IE8+可以设置padding</li>
+                                <li>所有浏览器radio/checkbox单选复选框无内置padding</li>
+                                <li>button按钮元素的padding最难控制</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>padding与图形绘制</td>
+                        <td>
+                            <div class="line-tri"></div>
+                        </td>
+                        <td>
+                            <div class="eye"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>两栏自适应布局</td>
+                        <td>
+                            <div class="topbox">
+                                <img src="./images/zm.png" style="width:40px;height:50px;" alt="">
+                                此处为两栏自适应布局:padding在容器上.本例实现的时,图片宽度固定,然后后面的文字信息达到自适应的效果,原理如下:容器有一个固定的padding-left值,此时图文应该在120px像素处显示,但是,由于图片margin负值浮动(或者绝对定位)到容器左上角
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contentImg">
+                                <img src="./images/zm.png" alt="">
+                                <div class="auto">
+                                    此处为两栏自适应布局:padding在容器上.本例实现的时,图片宽度固定,然后后面的文字信息达到自适应的效果,原理如下:容器有一个固定的padding-left值,此时图文应该在120px像素处显示,但是,由于图片margin负值浮动(或者绝对定位)到容器左上角
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="15">外边距(margin)</td>
+                        <td>margin:上 右 下 左</td>
+                        <td>设置元素与元素之间的距离</td>
+                        <td>值可以是负值</td>
+                        <td>适用于没有设定width,height的普通block水平元素</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">margin的重叠</td>
+                        <td>margin重叠通常特性</td>
+                        <td>block水平元素(不包括float和absolute元素)</td>
+                        <td>不考虑writing-mode,只发生在垂直方向</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">margin重叠的三种情形</td>
+                        <td>相邻的兄弟元素</td>
+                        <td>
+                            <ol>
+                                <li>margin同正，则取最大值；</li>
+                                <li>margin同负，则取最小值；</li>
+                                <li>margin一正一负，则取二者之和。</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>父级和第一个或者最后一个子元素</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                     </tr>
@@ -434,10 +613,10 @@
                 </tbody>
             </table>
         </section>
-        <div class="checkbox">
 
-        </div>
     </section>
+
+
 
     <script src="./js/index.js" async defer></script>
 </body>

@@ -5,14 +5,14 @@
 * @created 2020-07-27T11:25:10.104Z+08:00
 * @copyright None 
 * None
-* @last-modified 2020-07-27T16:56:29.954Z+08:00
+* @last-modified 2020-07-28T16:24:49.788Z+08:00
 */
 .main {
     margin: 0 auto;
-    width: 1200px;
-    border: 5px solid #cccccc;
-    box-shadow: 5px inset;
     margin-bottom: 100px;
+    border: 5px solid #ccc;
+    width: 1200px;
+    box-shadow: 5px inset;
 }
 
 .main>header {
@@ -41,24 +41,25 @@
 
 /* 圆角 */
 .box {
-    width: 20px;
-    height: 20px;
     /* 超出区域隐藏,只显示一个圆 */
     overflow: hidden;
+
+    width: 20px;
+    height: 20px;
 }
 
 .dotted {
+    border: 19px dotted #cd0000;
     width: 100%;
     height: 100%;
-    border: 19px dotted #cd0000;
 }
 
 /* 斑马线 */
 .doubleLine {
-    width: 40px;
-    height: 8px;
     border-top: 20px double;
     border-bottom: 8px solid;
+    width: 40px;
+    height: 8px;
 }
 
 /* 三角形 */
@@ -78,8 +79,116 @@
 /* 优雅的复选框 */
 .checkbox {
     border: 2px solid transparent;
-    box-shadow: inset 0 1px, inset 1px 0, inset -1px 0, inset 0 -1px;
-    background-color: #ffffff;
-    background-clip: content-box;
+    width: 20px;
+    height: 20px;
     color: #d0d0d5;
+    background-color: #fff;
+    background-clip: content-box;
+    box-shadow: inset 0 1px, inset 1px 0, inset -1px 0, inset 0 -1px;
+}
+
+/* 增加可视渲染区域 */
+.icon {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(20px 0 #ff8040);
+    -webkit-filter: drop-shadow(20px 0 #ff8040);
+}
+
+/* 透明border突破可视区域的限制 */
+.icons {
+    position: relative;
+    left: -20px;
+    border-right: 20px solid transparent;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(20px 0 #0f0);
+    -webkit-filter: drop-shadow(20px 0 #0f0);
+}
+
+
+/* padding实战 */
+.line {
+    margin-left: 12px;
+    border-left: 2px solid;
+    padding: 16px 6px 1px;
+    font-size: 0;
+}
+
+/* inline元素的padding断行 */
+/* .rows {
+    display: inline-block;
+    padding: 16%;
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+} */
+
+/* 空inline元素+padding高宽也不等 */
+/* .emptys {
+    display: inline-block;
+    padding: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+} */
+
+/* padding的表单按钮 */
+#btn {
+    line-height: 20px;
+    padding: 10px;
+    border: none;
+}
+
+label {
+    display: inline-block;
+    line-height: 20px;
+    padding: 10px;
+}
+
+/* padding与图形绘制 */
+.line-tri {
+    width: 150px;
+    height: 17px;
+    padding: 8px 0;
+    border-top: 20px solid;
+    border-bottom: 20px solid;
+    background-color: currentColor;
+    background-clip: content-box;
+}
+
+.eye {
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    border: 5px solid;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: currentColor;
+    background-clip: content-box;
+}
+
+
+/* 两栏自适应布局 */
+.topbox {
+    padding-left: 20px;
+}
+
+.topbox img {
+    float: left;
+    margin-left: -20px;
+}
+
+/* 第二个 */
+.contentImg img {
+    width: 40px;
+    height: 50px;
+    float: left;
+}
+
+.contentImg .auto {
+    padding-left: 20px;
 }
