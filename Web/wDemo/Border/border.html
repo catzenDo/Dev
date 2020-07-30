@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-30 00:45:58
  * @Author: Catzen
- * @LastEditTime: 2020-07-30 01:05:38
+ * @LastEditTime: 2020-07-30 17:47:39
  * @LastEditors: Catzen
  * @Descripttion: 
 -->
@@ -12,6 +12,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        table {
+            width: 1200px;
+            margin: 20px auto;
+        }
+
+        table tr>td:nth-child(1) {
+            width: 120px;
+        }
+
         /* 椭圆形 */
         #oval {
 
@@ -51,11 +60,11 @@
 
             height: 0;
 
-            border-left: 50px solid transparent;
+            border-left: 20px solid transparent;
 
-            border-right: 50px solid transparent;
+            border-right: 20px solid transparent;
 
-            border-top: 100px solid red;
+            border-top: 20px solid red;
 
         }
 
@@ -122,9 +131,9 @@
 
             height: 0;
 
-            border-bottom: 100px solid red;
+            border-bottom: 30px solid red;
 
-            border-right: 100px solid transparent;
+            border-right: 30px solid transparent;
 
         }
 
@@ -135,18 +144,18 @@
 
             height: 0;
 
-            border-bottom: 100px solid red;
+            border-bottom: 30px solid red;
 
-            border-left: 100px solid transparent;
+            border-left: 30px solid transparent;
 
         }
 
         /* 平行四边形 */
         #parallelogram {
 
-            width: 150px;
+            width: 100px;
 
-            height: 100px;
+            height: 50px;
 
             margin-left: 20px;
 
@@ -162,17 +171,11 @@
 
         /* 梯形 */
         #trapezoid {
-
-            border-bottom: 100px solid red;
-
-            border-left: 50px solid transparent;
-
-            border-right: 50px solid transparent;
-
+            border-bottom: 80px solid red;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
             height: 0;
-
-            width: 100px;
-
+            width: 40px;
         }
 
 
@@ -215,7 +218,7 @@
 
         }
 
-
+        /* 五角星 */
         #star-five {
 
             margin: 50px 0;
@@ -625,7 +628,7 @@
 
             height: 180px;
 
-            background-color: red;
+            background-color: #D1AF89;
 
             -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
 
@@ -926,19 +929,479 @@
             height: 12px;
 
         }
+
+        /* 圆锥形 */
+        .circularCone {
+            width: 0;
+            height: 0;
+            border-top: 85px solid #cccccc;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+
+
+        /* 丝巾  */
+        #badge-ribbon {
+            position: relative;
+            background: red;
+            height: 100px;
+            width: 100px;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+        }
+
+        #badge-ribbon:before,
+        #badge-ribbon:after {
+            content: '';
+            position: absolute;
+            border-bottom: 70px solid red;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            top: 70px;
+            left: -10px;
+            -webkit-transform: rotate(-140deg);
+            -moz-transform: rotate(-140deg);
+            -ms-transform: rotate(-140deg);
+            -o-transform: rotate(-140deg);
+        }
+
+        #badge-ribbon:after {
+            left: auto;
+            right: -10px;
+            -webkit-transform: rotate(140deg);
+            -moz-transform: rotate(140deg);
+            -ms-transform: rotate(140deg);
+            -o-transform: rotate(140deg);
+        }
+
+        /* 太空入侵 */
+        #space-invader {
+            box-shadow:
+                0 0 0 1em red,
+                0 1em 0 1em red,
+                -2.5em 1.5em 0 .5em red,
+                2.5em 1.5em 0 .5em red,
+                -3em -3em 0 0 red,
+                3em -3em 0 0 red,
+                -2em -2em 0 0 red,
+                2em -2em 0 0 red,
+                -3em -1em 0 0 red,
+                -2em -1em 0 0 red,
+                2em -1em 0 0 red,
+                3em -1em 0 0 red,
+                -4em 0 0 0 red,
+                -3em 0 0 0 red,
+                3em 0 0 0 red,
+                4em 0 0 0 red,
+                -5em 1em 0 0 red,
+                -4em 1em 0 0 red,
+                4em 1em 0 0 red,
+                5em 1em 0 0 red,
+                -5em 2em 0 0 red,
+                5em 2em 0 0 red,
+                -5em 3em 0 0 red,
+                -3em 3em 0 0 red,
+                3em 3em 0 0 red,
+                5em 3em 0 0 red,
+                -2em 4em 0 0 red,
+                -1em 4em 0 0 red,
+                1em 4em 0 0 red,
+                2em 4em 0 0 red;
+
+            background: red;
+            width: 1em;
+            height: 1em;
+            overflow: hidden;
+
+            margin: 50px 0 70px 65px;
+        }
+
+        /* 电视屏幕 */
+        #tv {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            margin: 20px 0;
+            background: red;
+            border-radius: 50% / 10%;
+            color: white;
+            text-align: center;
+            text-indent: .1em;
+        }
+
+        #tv:before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            bottom: 10%;
+            right: -5%;
+            left: -5%;
+            background: inherit;
+            border-radius: 5% / 50%;
+        }
+
+        /* 雪佛龙  */
+        #chevron {
+            position: relative;
+            text-align: center;
+            padding: 12px;
+            margin-bottom: 6px;
+            height: 60px;
+            width: 200px;
+        }
+
+        #chevron:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 51%;
+            background: red;
+            -webkit-transform: skew(0deg, 6deg);
+            -moz-transform: skew(0deg, 6deg);
+            -ms-transform: skew(0deg, 6deg);
+            -o-transform: skew(0deg, 6deg);
+            transform: skew(0deg, 6deg);
+        }
+
+        #chevron:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50%;
+            background: red;
+            -webkit-transform: skew(0deg, -6deg);
+            -moz-transform: skew(0deg, -6deg);
+            -ms-transform: skew(0deg, -6deg);
+            -o-transform: skew(0deg, -6deg);
+            transform: skew(0deg, -6deg);
+        }
+
+        /* 放大镜  */
+        #magnifying-glass {
+            font-size: 10em;
+            /* This controls the size. */
+            display: inline-block;
+            width: 0.4em;
+            height: 0.4em;
+            border: 0.1em solid red;
+            position: relative;
+            border-radius: 0.35em;
+        }
+
+        #magnifying-glass::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: -0.25em;
+            bottom: -0.1em;
+            border-width: 0;
+            background: red;
+            width: 0.35em;
+            height: 0.08em;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+        }
+
+        /* Facebook图标 */
+        #facebook-icon {
+            background: red;
+            text-indent: -999em;
+            width: 100px;
+            height: 110px;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            border: 15px solid red;
+            border-bottom: 0;
+        }
+
+        #facebook-icon::before {
+            content: "/20";
+            position: absolute;
+            background: red;
+            width: 40px;
+            height: 90px;
+            bottom: -30px;
+            right: -37px;
+            border: 20px solid #eee;
+            border-radius: 25px;
+        }
+
+        #facebook-icon::after {
+            content: "/20";
+            position: absolute;
+            width: 55px;
+            top: 50px;
+            height: 20px;
+            background: #eee;
+            right: 5px;
+        }
+
+        /* 月亮 */
+        #moon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 15px 15px 0 0 red;
+        }
+
+        /* 十字架 */
+        #cross {
+            background: red;
+            height: 100px;
+            position: relative;
+            width: 20px;
+        }
+
+        #cross:after {
+            background: red;
+            content: "";
+            height: 20px;
+            left: -40px;
+            position: absolute;
+            top: 40px;
+            width: 100px;
+        }
     </style>
 
 </head>
 <body>
-    <div id="yin-yang"></div>
-    <!-- 椭圆形 -->
-    <div id="oval">
+    <table border="10px" cellpadding="10px">
+        <tbody>
+            <!-- 椭圆形 -->
+            <tr>
+                <td>椭圆形</td>
+                <td>
+                    <div id="oval">
 
-    </div>
-    <!-- 上三角 -->
-    <div id="triangle-up">
+                    </div>
+                </td>
+            </tr>
+            <!-- 上三角 -->
+            <tr>
+                <td>上三角</td>
+                <td>
+                    <div id="triangle-up">
 
-    </div>
-    <!-- 下三角 -->
+                    </div>
+                </td>
+            </tr>
+            <!-- 下三角 -->
+            <tr>
+                <td>下三角</td>
+                <td>
+                    <div id="triangle-down">
+
+                    </div>
+                </td>
+            </tr>
+            <!-- 左下三角 -->
+            <tr>
+                <td>左下三角</td>
+                <td>
+                    <div id="triangle-bottomleft">
+
+                    </div>
+                </td>
+            </tr>
+            <!-- 右下三角 -->
+            <tr>
+                <td>右下三角</td>
+                <td>
+                    <div id="triangle-bottomright">
+
+                    </div>
+                </td>
+            </tr>
+            <!-- 平行四边形 -->
+            <tr>
+                <td>平行四边形</td>
+                <td>
+                    <div id="parallelogram"></div>
+                </td>
+            </tr>
+            <!-- 梯形 -->
+            <tr>
+                <td>梯形</td>
+                <td>
+                    <div id="trapezoid"></div>
+                </td>
+            </tr>
+            <!-- 六角星 -->
+            <tr style="height: 150px;">
+                <td>六角星</td>
+                <td>
+                    <div id="star-six"></div>
+                </td>
+            </tr>
+            <!-- 五角星 -->
+            <tr>
+                <td>五角星</td>
+                <td>
+                    <div id="star-five"></div>
+                </td>
+            </tr>
+            <!-- 五角大楼 -->
+            <tr style="height: 150px;">
+                <td>五角大楼</td>
+                <td>
+                    <div id="pentagon"></div>
+                </td>
+            </tr>
+            <!-- 六边形 -->
+            <tr style="height: 150px;">
+                <td>六边形</td>
+                <td>
+                    <div id="hexagon"></div>
+                </td>
+            </tr>
+            <!-- 八边形 -->
+            <tr style="height: 150px;">
+                <td>八边形</td>
+                <td>
+                    <div id="octagon"></div>
+                </td>
+            </tr>
+            <!-- 爱心 -->
+            <tr style="height: 150px;">
+                <td>爱心</td>
+                <td>
+                    <div id="heart"></div>
+                </td>
+            </tr>
+            <!-- 无限大符号 -->
+            <tr>
+                <td>无限大符号</td>
+                <td>
+                    <div id="infinity"></div>
+                </td>
+            </tr>
+            <!-- 鸡蛋 -->
+            <tr>
+                <td>鸡蛋</td>
+                <td>
+                    <div id="egg"></div>
+                </td>
+            </tr>
+            <!-- 食逗人 -->
+            <tr>
+                <td>食逗人</td>
+                <td>
+                    <div id="pacman"></div>
+                </td>
+            </tr>
+            <!-- 提示对话框 -->
+            <tr>
+                <td>提示对话框</td>
+                <td>
+                    <div id="talkbubble"></div>
+                </td>
+            </tr>
+            <!-- 十二角星 -->
+            <tr style="height: 150px;">
+                <td>十二角星</td>
+                <td>
+                    <div id="burst-12"></div>
+                </td>
+            </tr>
+            <!-- 八角形 -->
+            <tr style="height: 150px;">
+                <td>八角形</td>
+                <td>
+                    <div id="burst-8"></div>
+                </td>
+            </tr>
+            <!-- 钻石 -->
+            <tr style="height: 150px;">
+                <td>钻石</td>
+                <td>
+                    <div id="cut-diamond"></div>
+                </td>
+            </tr>
+            <!-- 阴阳 -->
+            <tr style="height: 150px;">
+                <td>阴阳</td>
+                <td>
+                    <div id="yin-yang"></div>
+                </td>
+            </tr>
+            <!-- 圆锥形 -->
+            <tr>
+                <td>圆锥形</td>
+                <td>
+                    <div class="circularCone">
+
+                    </div>
+                </td>
+            </tr>
+            <tr style="height: 150px;">
+                <td>丝巾</td>
+                <td>
+                    <div id="badge-ribbon"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>太空入侵</td>
+                <td>
+                    <div id="space-invader"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>电视屏幕</td>
+                <td>
+                    <div id="tv"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>雪芙龙</td>
+                <td>
+                    <div id="chevron"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>放大镜</td>
+                <td>
+                    <div id="magnifying-glass"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Facebook图标</td>
+                <td>
+                    <div id="facebook-icon"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>月亮</td>
+                <td>
+                    <div id="moon"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>十字架</td>
+                <td>
+                    <div id="cross">
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
 </body>
 </html>
