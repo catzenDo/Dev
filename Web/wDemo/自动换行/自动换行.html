@@ -1,0 +1,85 @@
+<!--
+ * @Date: 2020-07-31 16:40:54
+ * @Author: Catzen
+ * @LastEditTime: 2020-07-31 16:46:06
+ * @LastEditors: Catzen
+ * @Descripttion: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动换行</title>
+    <style>
+        .word {
+            background: #E4eFE9;
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            font-family: "microsoft yahei";
+        }
+
+        /* 强制不换行 */
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        /* 允许单词内断句，首先会尝试挪到下一行，看看下一行的宽度够不够，
+        不够的话就进行单词内的断句 */
+        .breakword {
+            word-wrap: break-word;
+        }
+
+        /* 断句时，不会把长单词挪到下一行，而是直接进行单词内的断句 */
+        .breakAll {
+            word-break: break-all;
+        }
+
+        /* 超出部分显示省略号 */
+        .ellipsis {
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        /*  单行文本溢出 */
+
+        .text {
+            width: 100px;
+            /*宽度要定义好*/
+            overflow: hidden;
+            /*溢出隐藏*/
+            text-overflow: ellipsis;
+            /*显示省略符号来代表被修剪的文本。*/
+            white-space: nowrap;
+            /*文字不换行*/
+        }
+
+        /* 多行文本溢出 */
+        .text-more {
+            width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            /*必须结合的属性，将对象作为弹性伸缩盒子模型显示*/
+            -webkit-line-clamp: 2;
+            /*控制文本的行数*/
+            -webkit-box-orient: vertical;
+            /*必须结合的属性，设置或检索伸缩盒对象的子元素的排列方式*/
+        }
+    </style>
+</head>
+<body>
+    <div class="word">
+        <p class="nowrap">wordwrap:breakword;absavhsafhuafdfbjhfvsalguvfaihuivfs</p>
+        <p class="breakword">wordwrap:break-word;absavhsafhuafdfbjhfvsalguvfaihui</p>
+        <p class="breakAll">wordwrap:break-word;absavhsafhuafdfbjhfvsalguvfaihuivf</p>
+        <p class="normal">wordwrap:breakword;absavhsafhuafdfbjhfvsalguvfaihuivfsa</p>
+        <p class="ellipsis">wordwrap:breakword;absavhsafhuafdfbjhfvsalguvfaihuivfsab</p>
+        <p class="text">qweqeqweqweqwdqwdqwrqwrewqrewqrewqrewqfweqew</p>
+        <p class="text-more">asdaassafdfsdvdsadfasdfdsafsdafa</p>
+    </div>
+
+
+</body>
+</html>
