@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-07-24 16:51:40
  * @Author: Catzen
- * @LastEditTime: 2020-07-29 17:04:22
+ * @LastEditTime: 2020-07-31 16:39:22
  * @LastEditors: Catzen
  * @Descripttion: 
 -->
@@ -330,7 +330,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td rowspan="2">文本属性</td>
+                        <td rowspan="11">文本属性</td>
                         <td>设置元素单词之间间距</td>
                         <td>word-spacing:数值</td>
                         <td>设置字母之间的间距</td>
@@ -341,6 +341,129 @@
                         <td>text-transform:capitalize/uppercase/lowercase/none</td>
                         <td>设置元素内文本的装饰</td>
                         <td>text-decoration:underline/overline/line-through/blink/none</td>
+                    </tr>
+                    <tr>
+                        <td>文本阴影(text-shadow)</td>
+                        <td>为段落、标题等元素中的文本添加动态的阴影效果</td>
+                        <td> text-shadow：h-shadow v-shadow blur color；</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>h-shadow 水平阴影的位置，值可以为负数（不可省略）</li>
+                                <li>v-shadow 垂直阴影的位置，值可以为负数（不可省略）</li>
+                                <li>blur 模糊的距离（可选）</li>
+                                <li>color 阴影的颜色（可选）</li>
+                                <li>none 默认值（text-shadow:none 可以取消文字的阴影效果）</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">文本轮廓(outline)</td>
+                        <td colspan="3">轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>outline-style:用于设置元素的整个轮廓的样式。</td>
+                        <td>object.style.outlineStyle="dotted"</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>none 默认。定义无轮廓;
+                                    dotted 定义点状的轮廓。
+                                </li>
+                                <li>dashed 定义虚线轮廓。
+                                    solid 定义实线轮廓。
+                                </li>
+                                <li>double 定义双线轮廓。双线的宽度等同于 outline-width的值。
+                                    groove 定义 3D 凹槽轮廓。此效果取决于 outline-color值。
+                                </li>
+                                <li>ridge 定义 3D 凸槽轮廓。此效果取决于 outline-color 值。
+                                    inset 定义 3D 凹边轮廓。此效果取决于outline-color 值。
+                                </li>
+                                <li>
+                                    outset 定义 3D 凸边轮廓。此效果取决于 outline-color 值。
+                                    inherit 规定应该从父元素继承轮廓样式的设置
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>outline-color属性设置一个元素整个轮廓中可见部分的颜色。</td>
+                        <td>object.style.outlineColor="#0000FF"</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li> color_name 规定颜色值为样册名称的轮廓颜色（比如red）
+                                </li>
+                                <li>hex_number 规定颜色值为十六进制值的轮廓颜色（比如#ff0000）
+                                </li>
+                                <li>rgb_number 规定颜色值为rgb代码的轮廓颜色（比如rgb(255，0，0))
+                                </li>
+                                <li>invert 默认。执行颜色反转（逆向的颜色）。
+                                    可使轮廓在不同的背景颜色中都是可见。</li>
+                                <li>inherit 规定应该从父元素继承轮廓颜色的设置。</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>outline-width属性之前声明 outline-style 属性。元素只有获得轮廓以后才能改变其轮廓的颜色。</td>
+                        <td>object.style.outlineWidth="thin"(宽度不允许是负数)</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>thin 规定细轮廓</li>
+                                <li>medium 默认。规定中等的轮廓</li>
+                                <li>thick 规定粗的轮廓</li>
+                                <li>length 允许您规定轮廓粗细的值</li>
+                                <li>inherit 规定应该从父元素继承轮廓宽度的设置</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">文本换行</td>
+                        <td>white-space</td>
+                        <td>white-space 属性是用来设置如何处理元素中的空白</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>normal 默认。空白会被浏览器忽略。</li>
+                                <li>pre 空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签。</li>
+                                <li>nowrap 文本不会换行，文本会在在同一行上继续，直到遇到 br 标签为止</li>
+                                <li>pre-wrap 保留空白符序列，但是正常地进行换行。</li>
+                                <li>pre-line 合并空白符序列，但是保留换行符。</li>
+                                <li>inherit 规定应该从父元素继承 white-space 属性的值。</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>word-wrap</td>
+                        <td>word-wrap属性用来标明是否允许浏览器在单词内进行断句，这是为了防止当一个字符串太长而找不到它的自然断句点时产生溢出现象。</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>normal: 只在允许的断字点换行(浏览器保持默认处理)</break-word:在长单词或URL地址内部进行换行li>
+                                <li></li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>word-break</td>
+                        <td>word-break 属性用来标明怎么样进行单词内的断句。</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>normal：使用浏览器默认的换行规则。</li>
+                                <li>break-all:允许在单词内换行</li>
+                                <li>keep-all:只能在半角空格或连字符处换行</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>text-overflow</td>
+                        <td>text-overflow CSS 属性确定如何向用户发出未显示的溢出内容信号。它可以被剪切，显示一个省略号（’…’，U + 2026 HORIZONTAL
+                            ELLIPSIS）或显示一个自定义字符串。</td>
+                        <td>
+                            <ol>
+                                <li>clip这个关键字的意思是"在内容区域的极限处截断文本"，因此在字符的中间可能会发生截断。为了能在两个字符过渡处截断，你必须使用一个空字符串值 (’’)此为默认值。
+                                </li>
+                                <li>ellipsis这个关键字的意思是“用一个省略号 (’…’, U+2026 HORIZONTAL
+                                    ELLIPSIS)来表示被截断的文本”。这个省略号被添加在内容区域中，因此会减少显示的文本。如果空间太小到连省略号都容纳不下，那么这个省略号也会被截断。</li>
+                                <li>string用来表示被截断的文本。字符串内容将被添加在内容区域中，所以会减少显示出的文本。如果空间太小到连省略号都容纳不下，那么这个字符串也会被截断。</li>
+                            </ol>
+                        </td>
                     </tr>
                     <tr>
                         <td rowspan="2">盒模型</td>
@@ -465,7 +588,7 @@
                     </tr>
                     <tr>
                         <td>CSS标签中的ol/ul的内置padding;
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>ol/li元素内置了padding-left,但是单位是px不是em</li>
                                 <li>padding-left的值22-25之间可以实现序号和下面的内容左对齐</li>
                                 <li>如果字号很小,间距就会很开</li>
@@ -479,7 +602,7 @@
                     </tr>
                     <tr>
                         <td>表单元素
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>火狐中:button:-moz-focus-linner{padding:0}</li>
                                 <li>IE浏览器:IE7文字越多,左右padding越大:button{overflow:hidden}</li>
                             </ol>
@@ -537,7 +660,7 @@
                         <td rowspan="4">margin重叠的三种情形</td>
                         <td>相邻的兄弟元素</td>
                         <td>
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>margin同正，则取最大值；</li>
                                 <li>margin同负，则取最小值；</li>
                                 <li>margin一正一负，则取二者之和。</li>
@@ -551,7 +674,7 @@
                     <tr>
                         <td>2、父级元素和第一个或最后一个子元素，父子级的margin重叠又叫margin传递</td>
                         <td>父子级margin重叠需要满足以下几个条件(以margin-top重叠为例)：
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>a、父元素不是BFC元素</li>
                                 <li>b、父元素没有padding-top值</li>
                                 <li>c、父元素没有border-top值</li>
@@ -564,7 +687,7 @@
                     <tr>
                         <td>3、空的block元素</td>
                         <td>空block元素发生margin重叠也需要满足一些条件:
-                            <ol> 
+                            <ol style="text-align: left;"> 
                                 <li>a、元素没有border值</li>
                                 <li>b、元素没有padding值</li>
                                 <li>c、里面没有inline元素</li>
@@ -638,7 +761,7 @@
                         <td>设置背景图像是否固定或者随着页面的其余部分滚动</td>
                         <td>background-attchment:scroll|fixed</td>
                         <td>
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>scroll:默认,背景图片随滚动条滚动</li>
                                 <li>fixed:当页面的其余部分滚动时,背景图片不会移动</li>
                             </ol>
@@ -660,7 +783,7 @@
                         <td>设置列表项的标记样式类型</td>
                         <td>list-style-type:none|关键词</td>
                         <td>
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>无列表:none|cicle(空心圆点)|disc(实心圆点)|square(实心方块)</li>
                                 <li>有序列表:none|decimal(从1开始)|lower-roman(小写罗马数字)|upper-roman(大写罗马数字)|lower-alpha(小写英文字母)|upper-alpha(大写英文字母)
                                 </li>
@@ -680,7 +803,7 @@
                         <td>列表样式缩写</td>
                         <td>list-style:[style][position][image]</td>
                         <td>
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>值之间用空格分隔</li>
                                 <li>顺序不固定</li>
                                 <li>list-style-image会覆盖list-style-type的设置
@@ -689,12 +812,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td rowspan="11">z-index</td>
+                        <td rowspan="9">z-index</td>
                         <td colspan="4">z-index属性制定了元素极易子元素的[z顺序],而[z顺序]可以决定当元素发生覆盖的时候,哪个元素在上面.通常一个较大z-index值会覆盖较低的一个
                         </td>
                     </tr>
                     <tr>
-                        <td rowspan="10">特性</td>
+                        <td rowspan="8">特性</td>
                         <td>1.如果定位元素z-index没有发生嵌套</td>
                         <td>后来居上原则</td>
                         <td>哪个大哪个上</td>
@@ -703,7 +826,7 @@
                         <td>2.如果定位元素z-index发生嵌套</td>
                         <td>祖先优先原则</td>
                         <td>
-                            <ol>
+                            <ol style="text-align: left;">
                                 <li>前提:z-index值是数值,非auto</li>
                                 <li>z-index:auto当前层叠上下文的生成盒子层叠水平是0,盒子(除非是根元素)不会创建一个新的层叠上下文</li>
                             </ol>
@@ -718,37 +841,294 @@
                         <td>元素的层叠顺序</td>
                         <td>层叠上下文---->>负z-index---->block块状水平元素---->float浮动盒子---->inline/inlien-block---->z-index:auto或看成z-index:0---->正z-index
                         </td>
-                        <td>内容是页面最重要的尸体,因此层叠水平要高</td>
+                        <td>内容是页面最重要的实体,因此层叠水平要高</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td rowspan="4">z-index失效</td>
+                        <td>1、父标签 position属性为relative；</td>
+                        <td>position:relative改为position:absolute；</td>
+                    </tr>
+                    <tr>
+                        <td>2、问题标签无position属性（不包括static）；</td>
+                        <td>浮动元素添加position属性（如relative，absolute等）；</td>
+                    </tr>
+                    <tr>
+                        <td>3、问题标签含有浮动(float)属性。</td>
+                        <td>去除浮动。</td>
+                    </tr>
+                    <tr>
+                        <td>4、问题标签的祖先标签的z-index值比较小</td>
+                        <td>提高父标签的z-index值</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="30">定位Position</td>
+                        <td rowspan="3">position之static</td>
+                        <td colspan="3">静态定位/常规定位/自然定位----定位中的一股清流,回归本真</td>
+                    </tr>
+                    <tr>
+                        <td>作用</td>
+                        <td colspan="2">是元素定位于常规/自然流中(块,行垂直排列下去,行内元素从左到右)</td>
+                    </tr>
+                    <tr>
+                        <td>特点</td>
+                        <td colspan="2">
+                            <ol style="text-align: left;">
+                                <li>忽略top,bottom,left,right或者z-index声明</li>
+                                <li>两个相邻的元素如果都设置了外边距,那么最外边距=两者外边距中最大的</li>
+                                <li>具有固定width和height值的元素,如果把左右外边距设置为auto,则左右外边距会自动扩大占满剩余宽度,造成的效果就是这个块级水平居中</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">position之fixed</td>
+                        <td colspan="3">固定定位</td>
+                    </tr>
+                    <tr>
+                        <td>作用</td>
+                        <td colspan="2">跟绝对定位是同根生相煎何太急</td>
+                    </tr>
+                    <tr>
+                        <td>特点</td>
+                        <td colspan="2">
+                            <ol style="text-align: left;">
+                                <li>跟absolute有啥区别?相对于谁做绝对定位</li>
+                                <li>固定定位元素不会随着视口滚动而滚动</li>
+                                <li>继承absolute的特点</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">position之sticky</td>
+                        <td colspan="3">磁贴定位/粘性定位/吸附定位</td>
+                    </tr>
+                    <tr>
+                        <td>作用</td>
+                        <td colspan="2">relative+fixed的完美结合,制造出吸附效果</td>
+                    </tr>
+                    <tr>
+                        <td>特点</td>
+                        <td colspan="2">
+                            <ol style="text-align: left;">
+                                <li>如果产生位移,原位置还是会在常规流中,一亩三分地留着</li>
+                                <li>如果它的最近祖先元素有滚动,那么他的偏移标尺就是最近的祖先元素</li>
+                                <li>如果最近祖先元素没有滚动,那么它的偏移标尺时视口</li>
+                                <li>上下左右的偏移规则</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="10">position之relative</td>
+                        <td colspan="3">相对定位</td>
+                    </tr>
+                    <tr>
+                        <td>作用</td>
+                        <td colspan="2">使元素成为containing-block,官话时可定位的祖先元素</td>
+                    </tr>
+                    <tr>
+                        <td>特点</td>
+                        <td colspan="2">
+                            <ol style="text-align: left;">
+                                <li>可以使用top/bottom/left/right/z-inde进行性对定位----相对的是谁??</li>
+                                <li>相对定位的元素不会离开常规流</li>
+                                <li>任何元素都可以设置为relative,它的绝对定位的后代都可以相对它进行绝对定位</li>
+                                <li>可以使浮动元素发生偏移,并控制他们的堆叠顺序</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">限制作用</td>
+                        <td colspan="2">1.限制left/bottom/right/top定位</td>
+                    </tr>
+                    <tr>
+                        <td>2.限制z-index层级</td>
+                        <td colspan="2">①同一父级如果有relative,那么里面的z-index看数值
+                            ②不同父级的如果同时有relative,那么无论自己z-index多大都要看父级dez-index
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.限制在overflow下的嚣张气焰</td>
+                        <td colspan="2">在元素有absolute时overflow无效,但是给父级加上relative就会有效</td>
+                    </tr>
+                    <tr>
+                        <td>与fixed的关系</td>
+                        <td colspan="2">只限制z-index的层级</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">定位</td>
+                        <td>相对自身</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>相对自己进行定位</li>
+                                <li>如果left=0,那就不会改变位置,如果是100px就会相对自己改变位置</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>无侵入定位</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>改变不会改变其他元素的位置(子集会改变)</li>
+                                <li>自定义拖拽(想怎么拖拽就怎么拖拽)</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>相对定位是斗争</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>top和bottom(top有作用)</li>
+                                <li>left和right(left有作用)</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">relative的最小化影响原则</td>
+                        <td colspan="3">尽量降低relative属性对其他元素或者布局的潜在影响</td>
+                    </tr>
+                    <tr>
+                        <td>尽量避免使用relative</td>
+                        <td colspan="3">
+                            <div>
+                                <img src="./images/tel.png" style="position: absolute; width: 40px;height: 40px;"
+                                    alt="">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">relative最小化</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="8">position之absolute</td>
+                        <td colspan="3">绝对定位</td>
+                    </tr>
+                    <tr>
+                        <td>作用</td>
+                        <td colspan="3">使元素脱离常规流</td>
+                    </tr>
+                    <tr>
+                        <td>特点</td>
+                        <td colspan="3">
+                            <ol style="text-align: left;">
+                                <li>脱离常规流</li>
+                                <li>设置尺寸要注意:百分比比的是谁?----最近定位祖先元素</li>
+                                <li>lrtb如果设置为0,它将对其到最近定位的祖先元素的各边----衍生出一个居中妙计</li>
+                                <li>lrtb如果设置为auto,它将被打回原形</li>
+                                <li>如果没有最近定位祖先元素,会认body做父亲</li>
+                                <li>z-index可以控制堆叠顺序999999见过吧?</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>relative和absolute</td>
+                        <td colspan="2">
+                            <ol style="text-align: left;">
+                                <li>两者是分离的,是对立的</li>
+                                <li>absolute越独立越强大</li>
+                                <li>独立的absolute可以摆脱overflow的限制,无论滚动还是隐藏</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">无依赖的absolute定位</td>
+                        <td colspan="2">不受relative限制的absolute定位,行为表现上是不适用top/right/left/bottom任何一个属性或适用auto作为值</td>
+                    </tr>
+                    <tr>
+                        <td>脱离文档流</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>去浮动</td>
+                        <td>出现absolute浮动绝对无效</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>absolute与位置跟随</td>
+                        <td>配合margin的精确定位:
+                            <ol style="text-align: left;">
+                                <li>支持负值定位</li>
+                                <li>超赞的兼容性--IE6</li>
+                            </ol>
+                        </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td rowspan="11">渐变</td>
+                        <td>概念</td>
+                        <td colspan="3">渐变可以在两个或者多个指定颜色之间显示平稳的过渡,渐变效果的元素在放大时看起来效果更好，因为渐变（gradient）是由浏览器生成的。</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td rowspan="6">线性渐变</td>
+                        <td>语法：background: linear-gradient(direction, color-stop1, color-stop2, ...);</td>
+                        <td colspan="2">direction：默认为to bottom，即从上向下的渐变；
+                            stop：颜色的分布位置，默认均匀分布，例如有3个颜色，各个颜色的stop均为33.33%。</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td rowspan="4">direction方向</td>
+                        <td>1. 单一方向渐变:</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>left 从左边开始/right 从右边开始/top 从上边开始/bottom 从底部开始(注意: 需要添加兼容前缀)</li>
+                                <li>
+                                    to left 到左边(结束位置)/to right 到右边/to top 到顶部/to bottom 到底部(注意: 不要添加兼容前缀)</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. 对角渐变:</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>left top 左上开始/left bottom 左下开始/right top 右上开始(注意: 带兼容前缀)</li>
+                                <li>to left top 到左上(结束位置)
+                                    注意: 不带兼容前缀</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3. 角度的渐变</td>
+                        <td> 10deg 10度</td>
+                    </tr>
+                    <tr>
+                        <td>4. 默认情况下颜色趋于均分
+                            可以指定颜色分布的百分比,让颜色按照百分比进行渐变</td>
+                        <td>blue 10% 到10% 都是蓝色
+                            red 10px 到10px都是红色</td>
+                    </tr>
+                    <tr>
+                        <td>4. 重复渐变</td>
+                        <td colspan="2">background: linear-gradient(direction, color-stop1, color-stop2, ...);</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">径向渐变</td>
+                        <td>概念</td>
+                        <td colspan="2">从起点到终点颜色从内到外进行圆形渐变(从中间向外拉)</td>
+                    </tr>
+                    <tr>
+                        <td>语法:background: radial-gradient(center, shape, size, start-color, ..., last-color);</td>
+                        <td>
+                            <ol style="text-align: left;">
+                                <li>center：渐变起点的位置，可以为百分比，默认是图形的正中心。</li>
+                                <li>shape：渐变的形状，ellipse表示椭圆形，circle表示圆形。默认为ellipse，如果元素形状为正方形的元素，则ellipse和circle显示一样。
+                                </li>
+                            </ol>
+                        </td>
+                        <td>
+                            <ol style="text-align: left;" start="3">
+                                <li>size：渐变的大小，即渐变到哪里停止，它有四个值。 closest-side：最近边；
+                                    farthest-side：最远边;closest-corner：最近角；farthest-corner：最远角</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">重复渐变</td>
+                        <td>1.重复性线性渐变</td>
+                        <td> background: repeating-linear-gradient(red, yellow 10%, green 20%);</td>
+                    </tr>
+                    <tr>
+                        <td>重复性径向渐变</td>
+                        <td>background: repeating-radial-gradient(red, yellow 10%, green 20%);</td>
                     </tr>
                 </tbody>
             </table>
